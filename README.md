@@ -2,8 +2,8 @@
 #forked from https://interview.huihut.com/ and partly changed
 
 * [OS](#OS)
-* [☁️ Computer Network](#computer-network)
-* [🌩 Network Programming](#network-programming)
+* [Computer Network](#computer-network)
+* [Network Programming](#network-programming)
 
 
 <a id="OS"></a>
