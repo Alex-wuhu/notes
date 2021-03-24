@@ -1,5 +1,5 @@
 
-#forked from https://interview.huihut.com/ and partly changed
+#forked from https://interview.huihut.com/ ,partly changed
 
 * [OS](#OS)
 * [Computer Network](#computer-network)
@@ -21,12 +21,12 @@
 #### 进程之间的通信方式以及优缺点
 
 * 管道（PIPE）
-    * 有名管道：一种半双工的通信方式，它允许无亲缘关系进程间的通信
+    * 有名管道(named pipe)：一种半双工的通信方式，它允许无亲缘关系进程间的通信
         * 优点：可以实现任意关系的进程间的通信
         * 缺点：
             1. 长期存于系统中，使用不当容易出错
             2. 缓冲区有限
-    * 无名管道：一种半双工的通信方式，只能在具有亲缘关系的进程间使用（父子进程）
+    * 无名管道(anonymous pipe)：一种半双工的通信方式，只能在具有亲缘关系的进程间使用（父子进程）
         * 优点：简单方便
         * 缺点：
             1. 局限于单向通信 
