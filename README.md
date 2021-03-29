@@ -10,6 +10,11 @@ test
 ## 💻 操作系统
 
 ### 进程与线程
+* 进程：execution/scheduling的基本单元(heavyweight process)
+* 线程：execution/scheduling的基本单元(lightweight process)
+* 线程的私有数据和局部数据：
+    1. private data: 线程执行的函数内的数据为私有的，不会被其余线程访问
+    2. local variables: 关键字_thread 使该变量对其余线程为可见的
 
 对于有线程系统：
 * 进程是资源分配的独立单位
