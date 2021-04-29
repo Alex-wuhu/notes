@@ -132,14 +132,17 @@
 * 读-拷贝修改(RCU，Read-Copy Update)
 * 顺序锁（seqlock）
 
-##### 同步算法
-* Peterson's Algorithm:使用flag和turn变量当作锁
- * 可能存在blocking problem（使用c++ atomic变量优化）
+#### 同步算法
+* Peterson's Algorithm:使用flag[]和turn变量当作锁
+	* 可能存在blocking problem（使用c++ atomic变量优化）
 * Bakery Algorithm
-##### Synchronization with OS support
+#### Synchronization with OS support
 * OS 一般用semaphore作为处理同步问题的工具（具原子性和Bonded waiting）
 * 常用的semaphore为busy waiting(do nothing while waiting),浪费CPU cycles，也成为spinlock 
-* To avoid busy waiting, Block the process waiting on a semaphore rather than make it busy waiting and wake up process when some other process executes a signal operation
+	* To avoid busy waiting, Block the process waiting on a semaphore rather than make it busy waiting and wake up process when some other process executes a signal operation
+* two types of semaphores
+   * Binary semaphore: range between 0 and 1, the initial value is usually set to 1
+   * Counting sempahore, value can exceed 1 and allows multiple processes to be excuting simultaneousely in their critical sections,initial value set to maximum number of processes that are allowed to execute.
 
 ### 死锁
 
