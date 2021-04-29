@@ -143,6 +143,15 @@
 * two types of semaphores
    * Binary semaphore: range between 0 and 1, the initial value is usually set to 1
    * Counting sempahore, value can exceed 1 and allows multiple processes to be excuting simultaneousely in their critical sections,initial value set to maximum number of processes that are allowed to execute.
+* differences between Mutes and semaphore
+	* Mutex is a binary semaphore
+	* Mutex has a sense of ownership(only tha task that has lock the mutex can unlock it)
+#### classic synchronization problems
+* Readers and Writers Problem:allows mulitple readers,only allows single writer
+	* First reader-writers :reader priority，using semaphore or mutex for solution
+	* Second reader-writers: writer priority
+	* Third reader-writers: equal priority
+* Dining-Philosophers problem
 
 ### 死锁
 
