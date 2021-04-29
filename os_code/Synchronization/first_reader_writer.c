@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<semaphore.h>
 #include<pthread.h>
-#define COUNT 500
+#define COUNT 10000
 sem_t wrt;
 sem_t s;
 int readcount=0;
@@ -43,19 +43,21 @@ void writer(void *n )
 		sem_wait(&wrt);   //LOCK
 		cur_count++;
 	        cur_writer=*number;	// critical section
+	
 		sem_post(&wrt);   //UNLOCK
 	}
 }
 void reader()
 {
-	usleep(30000);
 	int i;
 	for(i=0;i<COUNT;i++)
 	{
+		usleep(30000);
 		sem_wait(&s);     // Lock
 		readcount++;
 		if(readcount==1)
 			sem_wait(&wrt);  //if id is the first reader,it will block writer
+	
 		sem_post(&s);     //UNLOCK
 		
 		printf("The most recent writer id: [%d],count :[%d]\n",cur_writer,cur_count); //critical section
