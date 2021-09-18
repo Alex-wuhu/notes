@@ -10,18 +10,12 @@
 ## 💻 操作系统
 
 ### 进程与线程
-* 进程：execution/scheduling的基本单元(heavyweight process)
-* 线程：execution/scheduling的基本单元(lightweight process)
+* 进程：execution/scheduling的基本单元(heavyweight process)，操作系统资源分配调度的基本单元
+* 线程：execution/scheduling的基本单元(lightweight process)，CUP资源分配调度基本单元
 * 线程的私有数据和局部数据：
     1. private data: 线程执行的函数内的数据为私有的，不会被其余线程访问
     2. local variables: 关键字_thread 使该变量对其余线程为可见的
 
-对于有线程系统：
-* 进程是资源分配的独立单位
-* 线程是资源调度的独立单位
-
-对于无线程系统：
-* 进程是资源调度、分配的独立单位
 
 #### 进程之间的通信方式以及优缺点
 
