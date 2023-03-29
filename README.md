@@ -538,6 +538,10 @@ TCP的拥塞控制图
 【答案三】为了防止已失效的连接请求报文段突然又传送到了服务端，因而产生错误。
 
 > [《计算机网络（第 7 版）-谢希仁》](https://gitee.com/huihut/interview/raw/master/images/TCP-transport-connection-management.png)
+##### TCP第三次握手失败后会发生什么
+1. Server 端 ：第三次的ACK在网络中丢失，那么Server 端该TCP连接的状态为SYN_RECV,并且会根据 TCP的超时重传机制，会等待3秒、6秒、12秒后重新发送SYN+ACK包，以便Client重新发送ACK包。
+若长时间不回复则关闭连接
+2. Client 端 ：第三次握手中的ACK包丢失的情况下，Client 向 server端发送数据，Server端将以 RST包响应，方能感知到Server的错误。
 
 ##### TCP 四次挥手释放连接
 
